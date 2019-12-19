@@ -2,6 +2,7 @@
 
 package lesson1.task1
 
+import org.junit.Test
 import kotlin.math.*
 
 /**
@@ -49,8 +50,17 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
+    /**
     val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
     println("Root product: $x1x2")
+     */
+    val x = 7
+    val result = sqr(x)
+    println("Sqrt result $x * $x = $result")
+
+    println("angle result = ${angleInRadian(36, 14, 35)}")
+
+    println("thirdDigt result=${thirdDigit(131)}")
 }
 
 /**
@@ -76,7 +86,7 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double = (PI * (deg + (min + sec / 60) / 60)) / 180
 
 /**
  * Тривиальная
@@ -92,7 +102,10 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  * Пользователь задает целое число, большее 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
-fun thirdDigit(number: Int): Int = TODO()
+fun thirdDigit(number: Int): Int {
+    val n: Int = number / 100
+    return n - ((n / 10) * 10)
+}
 
 /**
  * Простая
